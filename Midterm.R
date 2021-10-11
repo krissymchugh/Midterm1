@@ -22,6 +22,12 @@ view(PercentChange)
 ##
 ## Calculate the 3 counties with the highest increase in the percentage of total population and the 
 ## 3 with the lowest percentage increase
+PercentChange %>%
+  arrange(desc(pct_change))
+
+
+
+
 
 
 
