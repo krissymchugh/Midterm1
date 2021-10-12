@@ -48,9 +48,9 @@ PercentChange %>%
   group_by(COUNTY) %>%
   arrange(pct_change)
 ## Here, we can see that the top 3 counties with the highest increase in the percentage of total 
-## population are, respectively, counties 19 (7.19%), 111 (6.99%), and 81 (6.65%). The 3 counties with   
-## the lowest increase in the percentage of total population are, respectively, counties 41 (-16.3%),
-## 49 (-11.4%), and 159 (-11.1%).
+## population are, respectively, counties 41 (19.5%), 49 (12.9%), and 159 (12.4%). The 3 counties with   
+## the lowest increase in the percentage of total population are, respectively, counties 19 (-6.70%),
+## 111 (-6.54%), and 81 (-6.24%).
 ## 
 ##
 ## Calculate the 3 counties with the highest increase in the percentage of population over age 65 and 
