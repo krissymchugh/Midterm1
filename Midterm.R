@@ -21,16 +21,17 @@ View(Year3)
 ##
 ## Created a column for the population estimates of each county in the year 2010.
 ##
-Year12 <- OhioPopASC %>%
+Year12 <- Year3 %>%
   group_by(COUNTY) %>%
   filter(YEAR == 12) %>%
   select(COUNTY, POPESTIMATE) %>%
-  mutate(final = POPESTIMATE) 
+  mutate(final = POPESTIMATE)
 View(Year12)
+
 ##
 ## Created a column for the population estimates of each county in the year 2019.
 ##
-PercentChange <- rbind(Year3, Year12) %>%
+PercentChange <- merge(Year3, Year12, by="COUNTY") %>%
   mutate(pct_change = (initial-final)/(final)*100)
 View(PercentChange)
 ##
