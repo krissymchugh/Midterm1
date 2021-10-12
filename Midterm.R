@@ -27,7 +27,6 @@ Year12 <- Year3 %>%
   select(COUNTY, POPESTIMATE) %>%
   mutate(final = POPESTIMATE)
 View(Year12)
-
 ##
 ## Created a column for the population estimates of each county in the year 2019.
 ##
@@ -44,10 +43,16 @@ View(PercentChange)
 PercentChange %>%
   group_by(COUNTY) %>%
   arrange(desc(pct_change))
+
+PercentChange %>%
+  group_by(COUNTY) %>%
+  arrange(pct_change)
 ## Here, we can see that the top 3 counties with the highest increase in the percentage of total 
-## population are, respectively, county 47, 33, and 59.
-
-
+## population are, respectively, counties 19 (7.19%), 111 (6.99%), and 81 (6.65%). The 3 counties with   
+## the lowest increase in the percentage of total population are, respectively, counties 41 (-16.3%),
+## 49 (-11.4%), and 159 (-11.1%).
+## 
+##
 
 
 
