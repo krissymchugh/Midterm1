@@ -11,7 +11,7 @@ str(OhioPopASC)
 ##
 ## Calculate the percentage change in the population of each Ohio county from the year 2010 to 2019
 ## YEARS == 3 and 12 in the data, respectively) and output a data frame with this information
-PercentChange <-OhioPopASC %>%
+PercentChange <- OhioPopASC %>%
   group_by(COUNTY) %>%
   filter(YEAR !=1) %>%
   filter(YEAR !=2) %>%
@@ -20,14 +20,20 @@ PercentChange <-OhioPopASC %>%
   mutate(pct_change = ((lead(POPESTIMATE))-(lag(POPESTIMATE))/(lead(POPESTIMATE))*100))
 view(PercentChange)
 
-PercentChange <-OhioPopASC %>%
+PercentChange <- OhioPopASC %>%
   group_by(COUNTY) %>%
   filter(YEAR !=1) %>%
   filter(YEAR !=2) %>%
   select(YEAR, POPESTIMATE, COUNTY) %>%
   arrange(desc(YEAR), .by_group = TRUE) %>%
-  mutate(pct_change = ((POPESTIMATE(YEAR == 3))-(POPESTIMATE(YEAR == 12))/(POPESTIMATE(YEAR == 3))*100))
-view(PercentChange)
+  mutate(initial=POPESTIMATE(YEAR == 3))
+
+Year3 <- OhioPopASC %>%
+  group_by(COUNTY) %>%
+  filter(YEAR == 3) %>%
+  select(COUNTY, POPESTIMATE) %>%
+  mutate(initial = POPESTIMATE)
+View(Year3)
 ##
 ## Calculate the 3 counties with the highest increase in the percentage of total population and the 
 ## 3 with the lowest percentage increase
