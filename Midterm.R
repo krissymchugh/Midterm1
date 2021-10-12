@@ -31,7 +31,7 @@ View(Year12)
 ## Created a column for the population estimates of each county in the year 2019.
 ##
 PercentChange <- merge(Year3, Year12, by="COUNTY") %>%
-  mutate(pct_change = (initial-final)/(final)*100)
+  mutate(pct_change = (final-initial)/(initial)*100)
 View(PercentChange)
 ##
 ## Combined data sets for the initial and final values for calculating the percent change from the year
@@ -53,7 +53,8 @@ PercentChange %>%
 ## 49 (-11.4%), and 159 (-11.1%).
 ## 
 ##
-
+## Calculate the 3 counties with the highest increase in the percentage of population over age 65 and 
+## the 3 with the lowest rate of increase in age over 65.
 
 
 
