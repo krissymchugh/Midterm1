@@ -113,8 +113,9 @@ View(Age.20.Below.final)
 ##
 ## Created a column for the population under 20 for each county in the year 2019.
 ##
-
-
-
-
-
+Age.20.Below <- merge(Age.20.Below.initial, Age.20.Below.final, by="COUNTY") %>%
+  select(COUNTY, Under20initial, Under20final) %>%
+  mutate(pct_change_20 = (Under20final - Under20initial)/(Under20initial)*100)
+View(Age.20.Below)
+## Merged the two data sets and created a variable for the percent change of the populations under 20
+## for each county between 2008 and 2019.
