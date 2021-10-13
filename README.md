@@ -1,2 +1,4 @@
-# Midterm1
-# Author: Krissy McHugh
+## Midterm1
+## Author: Krissy McHugh
+## Summary of program
+# In my program, I coded a series of population increases for the 3 counties with the highest increase in the percentage of total population and the 3 with the lowest percentage increase, the 3 counties with the highest increase in the percentage of population over age 65 and the 3 with the lowest rate of increase, and the 3 counties with the highest increase in the percentage of population under age 20 and the 3 with the lowest rate of increase. I did this by creating variables for the initial population and the final population for the specified years and age groups, grouped by each county, and generating a data set of these values. After doing this I was able to merge the initial and final population data sets and calculate the percent changes, and then order the counties from highest to lowest percent increases, and vice versa.  I followed this process 3 times for the 3 different timelines/age groups.
