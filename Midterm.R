@@ -55,7 +55,15 @@ PercentChange %>%
 ##
 ## Calculate the 3 counties with the highest increase in the percentage of population over age 65 and 
 ## the 3 with the lowest rate of increase in age over 65.
-
+AGE.65.UP <- OhioPopASC %>%
+  group_by(COUNTY) %>%
+  filter(YEAR == 1) %>%
+  select(COUNTY, AGE65PLUS_MALE, AGE65PLUS_FEM) %>%
+  mutate(Age65up = AGE65PLUS_MALE + AGE65PLUS_FEM)
+View(AGE.65.UP)
+## 
+## Calculated the population for both the female and male populations in 2008.
+##
 
 
 
