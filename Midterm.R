@@ -93,4 +93,18 @@ PercentChange65 %>%
 ## and 67 (13.9%).
 ##
 ##
+## Calculate the 3 counties with the highest increase in the percentage of population under age 20 and 
+## the 3 with the lowest rate of increase.
+Age.20.Below <- OhioPopASC %>%
+  group_by(COUNTY) %>%
+  filter(YEAR == 1) %>%
+  select(COUNTY, AGE1519_TOT, AGE1014_TOT, AGE59_TOT, AGE04_TOT) %>%
+  mutate(Under20initial = AGE1519_TOT + AGE1014_TOT + AGE04_TOT)
+View(Age.20.Below)
+
+
+
+
+
+
 
