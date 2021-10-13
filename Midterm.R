@@ -73,6 +73,14 @@ View(AGE.65.UP.FINAL)
 ## 
 ## Calculated the population for both the female and male populations in 2008.
 ##
-
-
+PercentChange65 <- merge(AGE.65.UP.INITIAL, AGE.65.UP.FINAL, by="COUNTY") %>%
+  select(COUNTY, Age65upfinal, Age65upinitial) %>%
+  mutate(pct_change_65 = (Age65upfinal-Age65upinitial)/(Age65upinitial)*100)
+View(PercentChange65)
+##
+## Merged the initial 65+ population and final population 65+ data sets.
+##
+PercentChange65 %>%
+  group_by(COUNTY) %>%
+  arrange(desc(pct_change_65))
 
