@@ -84,3 +84,13 @@ PercentChange65 %>%
   group_by(COUNTY) %>%
   arrange(desc(pct_change_65))
 
+PercentChange65 %>%
+  group_by(COUNTY) %>%
+  arrange(pct_change_65)
+## Here, we can see that the top 3 counties with the highest increase in the percentage of population
+## over 65 are, respectively, counties 41 (79.1%), 165 (52.4%), and 159 (51.3%). We can also see that
+## the 3 counties with the lowest rate of increase are, respectively, counties 81 (13.0%), 33 (13.8%),
+## and 67 (13.9%).
+##
+##
+
