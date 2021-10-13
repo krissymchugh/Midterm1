@@ -117,5 +117,22 @@ Age.20.Below <- merge(Age.20.Below.initial, Age.20.Below.final, by="COUNTY") %>%
   select(COUNTY, Under20initial, Under20final) %>%
   mutate(pct_change_20 = (Under20final - Under20initial)/(Under20initial)*100)
 View(Age.20.Below)
+##
 ## Merged the two data sets and created a variable for the percent change of the populations under 20
 ## for each county between 2008 and 2019.
+##
+Age.20.Below %>%
+  group_by(COUNTY) %>%
+  arrange(desc(pct_change_20))
+
+Age.20.Below %>%
+  group_by(COUNTY) %>%
+  arrange(pct_change_20)
+## Here, we can see that the top 3 counties with the highest increase in the percentage of population
+## under 20 are, respectively, counties 41 (14.6%), 49 (7.68%), and 159 (3.87%). The 3 counties with 
+## the smallest increase in the percentage of population under 20 are, respectively, counties 111 (-16.0%),
+## 115 (-15.8%), and 163 (-15.3%).
+## 
+
+
+
